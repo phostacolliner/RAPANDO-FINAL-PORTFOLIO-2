@@ -9,20 +9,19 @@ const connectionString = process.env.DATABASE_URL;
 const poolConfig = connectionString
   ? {
       connectionString,
-      ssl:
-        connectionString.includes('sslmode=require') || connectionString.includes('render')
-          ? { rejectUnauthorized: false }
-          : undefined,
+      ssl: connectionString.includes('sslmode=require') || connectionString.includes('render.com')
+        ? { rejectUnauthorized: false }
+        : undefined,
       max: 10,
       idleTimeoutMillis: 30000,
     }
   : {
-      host: process.env.POSTGRES_HOST || 'localhost',
-      port: Number(process.env.POSTGRES_PORT || '5432'),
-      user: process.env.POSTGRES_USER || 'postgres',
-      password: process.env.POSTGRES_PASSWORD || 'postgres',
-      database: process.env.POSTGRES_DB || 'collinerportfolio',
-      ssl: false,
+      host: 'dpg-da0dtv8u01pc738uod3g-a.oregon-postgres.render.com',
+      port: 5432,
+      user: 'collinerportfolio_user',
+      password: 'mdlByLnQIYb3muw5CYbO0sfcncgLx1ae',
+      database: 'collinerportfolio',
+      ssl: { rejectUnauthorized: false },
       max: 10,
       idleTimeoutMillis: 30000,
     };
