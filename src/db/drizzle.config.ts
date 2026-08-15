@@ -2,21 +2,16 @@ import { defineConfig } from 'drizzle-kit';
 
 const connectionString = process.env.DATABASE_URL;
 
+if (!connectionString) {
+  throw new Error('DATABASE_URL is not set. Add your Render Postgres connection URL to the environment variables.');
+}
+
 export default defineConfig({
   schema: './src/db/schema.ts',
   out: './drizzle',
   dialect: 'postgresql',
-  dbCredentials: connectionString
-    ? {
-        connectionString,
-        ssl: { rejectUnauthorized: false },
-      }
-    : {
-        host: process.env.POSTGRES_HOST || 'localhost',
-        port: Number(process.env.POSTGRES_PORT || '5432'),
-        user: process.env.POSTGRES_USER || 'postgres',
-        password: process.env.POSTGRES_PASSWORD || 'postgres',
-        database: process.env.POSTGRES_DB || 'collinerportfolio',
-        ssl: false,
-      },
+  dbCredentials: {
+    connectionString,
+    ssl: { rejectUnauthorized: false },
+  },
 });
