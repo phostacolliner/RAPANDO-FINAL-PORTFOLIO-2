@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Send, ChevronDown, Sparkles } from 'lucide-react';
 import { useData } from '../context/DataContext';
-import portraitImg from '../assets/images/colliner_portrait_1786735551357.jpg';
+import portraitImg from '../assets/images/colliner_portrait_1786735551357.jpeg';
 
 interface HeroProps {
   onExploreWork: () => void;

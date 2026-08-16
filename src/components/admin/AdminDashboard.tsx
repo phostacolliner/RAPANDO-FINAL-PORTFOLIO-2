@@ -62,7 +62,7 @@ import {
   ProfileData
 } from '../../services/api';
 import { useData } from '../../context/DataContext';
-import defaultPortraitImg from '../../assets/images/colliner_portrait_1786735551357.jpg';
+import defaultPortraitImg from '../../assets/images/colliner_portrait_1786735551357.jpeg';
 
 interface AdminDashboardProps {
   isOpen: boolean;
