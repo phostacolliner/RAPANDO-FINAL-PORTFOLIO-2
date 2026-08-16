@@ -86,17 +86,17 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork, onContactClick }) => 
           {/* Right Column: Portrait */}
           <div className="lg:col-span-5 relative flex flex-col items-center justify-center">
             {/* Portrait Frame */}
-            <div className="relative w-72 sm:w-80 md:w-96 aspect-[4/5] rounded-2xl p-1.5 bg-gradient-to-b from-[#00D4FF]/40 via-[#0D6EFD]/20 to-transparent shadow-2xl shadow-black/80 z-10 group">
-              <div className="w-full h-full rounded-[14px] overflow-hidden bg-[#06152B] relative border border-blue-500/20">
+            <div className="relative w-72 sm:w-80 md:w-96 aspect-square rounded-full p-1.5 bg-gradient-to-b from-[#00D4FF]/40 via-[#0D6EFD]/20 to-transparent shadow-2xl shadow-black/80 z-10 group">
+              <div className="w-full h-full rounded-full overflow-hidden bg-[#06152B] relative border border-blue-500/20">
                 {!imageError ? (
                   <img
                     src={profile?.avatarUrl || portraitImg}
                     alt={`${profile?.fullName || 'Colliner Phosta'} - Data Analyst & Economist`}
-                    className="w-full h-full object-cover object-top filter contrast-105 group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover object-top rounded-full filter contrast-105 group-hover:scale-105 transition-transform duration-700"
                     onError={() => setImageError(true)}
                   />
                 ) : (
-                  <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#081B35] to-[#040E1E] p-6 text-center">
+                  <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#081B35] to-[#040E1E] p-6 text-center rounded-full">
                     <div className="w-20 h-20 rounded-full bg-[#0D6EFD]/20 border border-[#00D4FF]/40 flex items-center justify-center text-[#00D4FF] mb-4">
                       <span className="text-2xl font-bold">CP</span>
                     </div>
@@ -106,7 +106,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork, onContactClick }) => 
                 )}
 
                 {/* Subtle vignette gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#020817] via-transparent to-transparent opacity-60 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#020817] via-transparent to-transparent opacity-60 pointer-events-none rounded-full" />
               </div>
             </div>
 
